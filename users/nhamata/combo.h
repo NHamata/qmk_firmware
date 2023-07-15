@@ -37,6 +37,22 @@ This combo occurs when the thumb is to the left of the resting position, the ind
  Grid labels for colemak DHE layout, a layout that is a modification of the popular colemak mod-dh, where the letter 'e' is put on a thumb key. A few keyswaps were required to accomodate this.
 */
 
+enum combos {
+    COMMA_C,
+    DOT_C,
+    LPRN_C,
+    RPRN_C,
+    LCBR_C,
+    RCBR_C,
+    LBRC_C,
+    RBRC_C,
+    LABK_C,
+    RABK_C,
+    SQT_C,
+    DQT_C,
+    
+};
+
 #ifdef COLEMAK_DHE
 
 #define LI0   KC_T
@@ -44,8 +60,7 @@ This combo occurs when the thumb is to the left of the resting position, the ind
 #define LR0   KC_R
 #define LP0   KC_A
 #define LI5   KC_D
-#define LM5   KC_C
-#define LR5   KC_X
+
 #define LI1   KC_P
 #define LM1   KC_F
 #define LR1   KC_W
@@ -63,8 +78,8 @@ This combo occurs when the thumb is to the left of the resting position, the ind
 #define RM1   KC_U
 #define RR1   KC_Y
 
-#define LI7   KC_M
-#define LM7   KC_N
+#define RI7   KC_M
+#define RM7   KC_N
 #define LI8   KC_BSPC
 #define LM8   KC_J
 
@@ -72,9 +87,13 @@ This combo occurs when the thumb is to the left of the resting position, the ind
 
 #else
 #define LT0   KC_SPC
+#define LI5   KC_D
+#define LM5   KC_C
+#define LR5   KC_X
+#define RT0   KC_E
 #define RI5   KC_H
-#define RM5   KC_COMM
-#define RR5   KC_DOT
+#define RM5   KC_EQL
+#define RR5   KC_UNDS
 #endif
 
 
@@ -84,9 +103,7 @@ This combo occurs when the thumb is to the left of the resting position, the ind
 #define LM0   KC_D
 #define LR0   KC_S
 #define LP0   KC_A
-#define LI5   KC_
-#define LM5   KC_
-#define LR5   KC_
+
 #define LI1   KC_R
 #define LM1   KC_E
 #define LR1   KC_W
@@ -104,17 +121,23 @@ This combo occurs when the thumb is to the left of the resting position, the ind
 #define RM1   KC_O
 #define RR1   KC_P
 
-#define LI7   KC_H
-#define LM7   KC_J
+#define RI7   KC_H
+#define RM7   KC_J
 #define LI8   KC_U
 #define LM8   KC_I
 
 #ifdef COMBO_MT
 
 #else
-#define LT0   KC_E
-#define RI5   KC_
-#define RM5   KC_
-#define RR5   KC_
+#define LT0   KC_SPC
+#define LI5   KC_C
+#define LM5   KC_X
+#define LR5   KC_Z
+
+#define RT0   KC ????
+#define RI5   KC_M
+#define RM5   KC_EQL
+#define RR5   KC_UNDS
+
 #endif
 #endif
