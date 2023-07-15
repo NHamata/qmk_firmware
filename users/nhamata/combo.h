@@ -50,7 +50,6 @@ enum combos {
     RABK_C,
     SQT_C,
     DQT_C,
-    
 };
 
 #ifdef COLEMAK_DHE

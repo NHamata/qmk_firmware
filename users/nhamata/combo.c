@@ -15,6 +15,7 @@ const uint16_t PROGMEM scln_combo[] = {RI5, RR0, COMBO_END};
 const uint16_t PROGMEM tab_combo[] = {LI3, LM3, COMBO_END};
 const uint16_t PROGMEM ent_combo[] = {RI7, RM7, COMBO_END};
 
+
 combo_t key_combos[] = {
     [COMMA_C]=COMBO(comma_combo, KC_COMMA),
     [DOT_C]=COMBO(dot_combo, KC_DOT),
@@ -33,3 +34,4 @@ combo_t key_combos[] = {
     [TAB_C]=COMBO(tab_combo, KC_TAB),
     [ENT_C]=COMBO(ent_combo, KC_ENT),
 };
+
