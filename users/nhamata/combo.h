@@ -75,12 +75,12 @@ RM1, This combo occurs when the right hand middle finger is one key above homero
     #ifdef COMBO_MT_L0
         #define LT0    LSFT_T(KC_SPC)
         #define LI5    LCTL_T(KC_D)
-        #define LM5    LALT_T(KC_C)
-        #define LR5    LGUI_T(KC_X)
+        #define LR5    LGUI_T(KC_C)
+        #define LM5    LALT_T(KC_X)
         #define RT0    RSFT_T(KC_E)
         #define RI5    RCTL_T(KC_H)
-        #define RM5    RALT_T(KC_EQL)
-        #define RR5    RGUI_T(KC_UNDS)
+        #define RR5    RGUI_T(KC_EQL)
+        #define RM5    RALT_T(KC_UNDS)
     #else
         #define LT0   KC_SPC
         #define LI5   KC_D
@@ -170,6 +170,8 @@ enum combos {
     CAPS_COMBO,
     PGUP_COMBO,
     PGDN_COMBO,
+    PGUP_HJKL_COMBO,
+    PGDN_HJKL_COMBO,
 };
 
 extern const uint16_t PROGMEM comma_combo[]; // , KC_COMMA
@@ -206,3 +208,5 @@ extern const uint16_t PROGMEM esc_combo[]; // KC_ESC
 extern const uint16_t PROGMEM caps_combo[]; // KC_CAPS
 extern const uint16_t PROGMEM pgup_combo[]; // KC_PGUP
 extern const uint16_t PROGMEM pgdn_combo[]; // KC_PGDN
+extern const uint16_t PROGMEM pgup_hjkl_combo[]; // KC_PGUP
+extern const uint16_t PROGMEM pgdn_hjkl_combo[]; // KC_PGDN

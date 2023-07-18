@@ -20,11 +20,11 @@ const uint16_t PROGMEM tab_combo[] = {LI3, LM3, COMBO_END}; //KC_TAB
 const uint16_t PROGMEM ent_combo[] = {RI7, RM7, COMBO_END}; // KC_ENT
 // symbols that are prone to update.
 const uint16_t PROGMEM astr_combo[] = {LM5, LR5, COMBO_END}; // * KC_ASTR
-const uint16_t PROGMEM slsh_combo[] = {RM5, RR5, COMBO_END}; // /
+const uint16_t PROGMEM slsh_combo[] = {RM5, RR5, COMBO_END}; // / KC_SLSH
 const uint16_t PROGMEM hash_combo[] = {LI5, LR5, COMBO_END}; // # KC_HASH
 const uint16_t PROGMEM dlr_combo[] = {RI5, RR5, COMBO_END}; // $ KC_DLR 
 const uint16_t PROGMEM ampr_combo[] = {LI1, LR1, COMBO_END}; // & KC_AMPR
-const uint16_t PROGMEM bsls_combo[] = {RI1, RR1, COMBO_END}; 
+const uint16_t PROGMEM bsls_combo[] = {RI1, RR1, COMBO_END};  // \ KC_BSLS
 // should be med-low use
 const uint16_t PROGMEM exlm_combo[] = {LI0, LM1, COMBO_END}; // ! KC_EXLM 
 const uint16_t PROGMEM at_combo[] = {RI0, RM1, COMBO_END}; // @ KC_AT
@@ -36,12 +36,10 @@ const uint16_t PROGMEM tild_combo[] = {RI0, RP0, COMBO_END}; // ~ KC_TILD
 const uint16_t PROGMEM esc_combo[] = {LR0, LP0, COMBO_END}; // KC_ESC
 const uint16_t PROGMEM caps_combo[] = {RR0, RP0, COMBO_END}; // KC_CAPS
 //nav cluster, generally on another layer
-const uint16_t PROGMEM pgup_combo[] = {RI1, RM1, COMBO_END}; // KC_PGUP
-const uint16_t PROGMEM pgdn_combo[] = {RM1, RR1, COMBO_END}; // KC_PGDN
-#ifdef BOTTOM_RIGHT_NAV
-const uint16_t PROGMEM bottom_right_pgup_combo[] = {RI4, RM4, COMBO_END}; // KC_PGUP
-const uint16_t PROGMEM bottom_right_pgdn_combo[] = {RM4, RR4, COMBO_END}; // KC_PGDN
-#endif
+const uint16_t PROGMEM pgup_combo[] = {KC_HOME, KC_UP, COMBO_END}; // KC_PGUP
+const uint16_t PROGMEM pgdn_combo[] = {KC_UP, KC_END, COMBO_END}; // KC_PGDN
+const uint16_t PROGMEM pgup_hjkl_combo[] = {KC_HOME, KC_K, COMBO_END}; // KC_PGUP
+const uint16_t PROGMEM pgdn_hjkl_combo[] = {KC_K, KC_END, COMBO_END}; // KC_PGDN
 
 
 
@@ -82,9 +80,7 @@ combo_t key_combos[] = {
     [CAPS_COMBO]=COMBO(tild_combo, KC_CAPS),
     [PGUP_COMBO]=COMBO(pgup_combo, KC_PGUP),
     [PGDN_COMBO]=COMBO(pgdn_combo, KC_PGDN),
-    #ifdef BOTTOM_RIGHT_NAV
-        [BOTTOM_RIGHT_PGUP_COMBO]=COMBO(bottom_right_pgup_combo, KC_PGUP),
-        [BOTTOM_RIGHT_PGDN_COMBO]=COMBO(bottom_right_pgdn_combo, KC_PGDN),
-    #endif
+    [PGUP_HJKL_COMBO]=COMBO(pgup_hjkl_combo, KC_PGUP),
+    [PGDN_HJKL_COMBO]=COMBO(pgdn_hjkl_combo, KC_PGDN),
 };
 #endif
