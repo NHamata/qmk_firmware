@@ -15,9 +15,9 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-
+#define DHE_LABELS
+#define ALL_COMBO_DEFS
 #define ALL_COMBOS
-#define COLEMAK_DHE_COMBO_KEYS
 #include QMK_KEYBOARD_H  
 #include "combo.h"
 
@@ -28,7 +28,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|---------------+---------------+---------------+---------------+---------------+---------------|                                  |---------------+---------------+---------------+---------------+---------------+---------------|
         XXXXXXX,          KC_A,            KC_R,           KC_S,           KC_T,           KC_G,                                              KC_M,           KC_N,           KC_L,           KC_I,           KC_O,         XXXXXXX,
   //|---------------+---------------+---------------+---------------+---------------+---------------|                                  |---------------+---------------+---------------+---------------+---------------+---------------|
-        XXXXXXX,          KC_Z,       LALT_T(KC_X),   LGUI_T(KC_C),   LCTL_T(KC_D),        KC_V,                                              KC_K,      RCTL_T(KC_H),  RGUI_T(KC_EQL), RALT_T(KC_UNDS),    KC_SLSH,        XXXXXXX,
+        XXXXXXX,          KC_Z,       LALT_T(KC_X),   LGUI_T(KC_C),   LCTL_T(KC_D),        KC_V,                                              KC_K,      RCTL_T(KC_H),  RGUI_T(KC_COMMA), RALT_T(KC_DOT),    KC_SLSH,        XXXXXXX,
   //|---------------+---------------+---------------+---------------+---------------+---------------+---------------|  |---------------+---------------+---------------+---------------+---------------+---------------+---------------|
                                                                         KC_LGUI,     LSFT_T(KC_SPC),      MO(1),              MO(2),     RSFT_T(KC_E),      KC_RALT
                                                                   //`-----------------------------------------------'  `-----------------------------------------------'

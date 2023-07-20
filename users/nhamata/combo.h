@@ -1,4 +1,7 @@
-#pragma once
+#pragma once 
+#include QMK_KEYBOARD_H
+#include "quantum.h"
+
 
 /*
 This file defines all combos that may be used in a keymap. The intent is that it is abstract and general enough, such that multiple keymaps, regardless of layout or key alignment, can reuse these combos. This also keeps combos consistent, so that there is no need to relearn new combos for a new keyboard. This also avoid defining the same sets of combos for many keymaps (avoiding duplicates).
@@ -45,10 +48,9 @@ LT7, This combo occurs when the left hand thumb is to the left of the resting po
 RM1, This combo occurs when the right hand middle finger is one key above homerow.
 */
 
-/*
- Labels for colemak DHE layout, a layout that is a modification of the popular colemak mod-dh, where the letter 'e' is put on a thumb key. A few keyswaps were required to accomodate this.
-*/
-#ifdef COLEMAK_DHE_COMBO_KEYS
+
+//Labels for colemak DHE layout, a layout that is a modification of the popular colemak mod-dh, where the letter 'e' is put on a thumb key. A few keyswaps were required to accomodate this.
+#ifdef DHE_LABELS
     #define LI0   KC_T
     #define LM0   KC_S
     #define LR0   KC_R
@@ -71,27 +73,16 @@ RM1, This combo occurs when the right hand middle finger is one key above homero
     #define RM7   KC_N
     #define LI8   KC_BSPC
     #define LM8   KC_J
-    // if modtap is used than use this section 
-    #ifdef COMBO_MT_L0
-        #define LT0    LSFT_T(KC_SPC)
-        #define LI5    LCTL_T(KC_D)
-        #define LR5    LGUI_T(KC_C)
-        #define LM5    LALT_T(KC_X)
-        #define RT0    RSFT_T(KC_E)
-        #define RI5    RCTL_T(KC_H)
-        #define RR5    RGUI_T(KC_EQL)
-        #define RM5    RALT_T(KC_UNDS)
-    #else
-        #define LT0   KC_SPC
-        #define LI5   KC_D
-        #define LM5   KC_C
-        #define LR5   KC_X
-        #define RT0   KC_E
-        #define RI5   KC_H
-        #define RM5   KC_EQL
-        #define RR5   KC_UNDS
-    #endif
-#elseif QWERTY_ALPHA 
+    #define LT0    LSFT_T(KC_SPC)
+    #define LI5    LCTL_T(KC_D)
+    #define LM5    LGUI_T(KC_C)
+    #define LR5    LALT_T(KC_X)
+    #define RT0    RSFT_T(KC_E)
+    #define RI5    RCTL_T(KC_H)
+    #define RM5    RGUI_T(KC_COMMA)
+    #define RR5    RALT_T(KC_DOT)
+//Labels for basic QWERTY layout. Keycodes choosen based on ease of usage.
+#elif QWERTY_LABELS
     #define LI0   KC_F
     #define LM0   KC_D
     #define LR0   KC_S
@@ -114,50 +105,39 @@ RM1, This combo occurs when the right hand middle finger is one key above homero
     #define RM7   KC_J
     #define LI8   KC_U
     #define LM8   KC_I
-    #ifdef COMBO_MT_L0
-        #define LT0   LSFT_T(KC_SPC)
-        #define LI5   LCTL_T(KC_C)
-        #define LM5   LALT_T(KC_X)
-        #define LR5   LGUI_T(KC_Z)
-        #define RT0   RSFT_T(KC_E)
-        #define RI5   RCTL_T(KC_M)
-        #define RM5   RALT_T(KC_EQL)
-        #define RR5   RGUI_T(KC_UNDS)
-    #else
-        #define LT0   KC_SPC
-        #define LI5   KC_C
-        #define LM5   KC_X
-        #define LR5   KC_Z
-        #define RT0   KC_E
-        #define RI5   KC_M
-        #define RM5   KC_EQL
-        #define RR5   KC_UNDS
-    #endif
+    #define LT0   LSFT_T(KC_SPC)
+    #define LI5   LCTL_T(KC_C)
+    #define LR5   LGUI_T(KC_Z)
+    #define LM5   LALT_T(KC_X)    
+    #define RT0   RSFT_T(KC_E)
+    #define RI5   RCTL_T(KC_M)
+    #define RR5   RGUI_T(KC_COMMA)    
+    #define RM5   RALT_T(KC_DOT)
 #endif
 
 enum combos {
-    COMMA_COMBO,
-    DOT_COMBO,
     LPRN_COMBO,
     RPRN_COMBO,
     LCBR_COMBO,
     RCBR_COMBO,
-    LBRC_COMBO,
-    RBRC_COMBO,
     LABK_COMBO,
     RABK_COMBO,
+    EQL_COMBO,
+    UNDS_COMBO,
+    LBRC_COMBO,
+    RBRC_COMBO,
+    SCLN_COMBO,
+    MINS_COMBO,
     DEL_COMBO,
     BSPC_COMBO,
     QUOT_COMBO,
     DQT_COMBO,
-    MINS_COMBO,
-    SCLN_COMBO,
     TAB_COMBO,
     ENT_COMBO,
-    ASTR_COMBO,
     SLSH_COMBO,
+    ASTR_COMBO,
     HASH_COMBO,
-    DLR_COMBO,
+    DLR_COMBO,   
     AMPR_COMBO,
     BSLS_COMBO,
     EXLM_COMBO,
@@ -174,39 +154,53 @@ enum combos {
     PGDN_HJKL_COMBO,
 };
 
-extern const uint16_t PROGMEM comma_combo[]; // , KC_COMMA
-extern const uint16_t PROGMEM dot_combo[]; // . KC_DOT
+#if defined FIRM_COMBO_DEFS || defined ALL_COMBO_DEFS
 extern const uint16_t PROGMEM lprn_combo[]; // ( KC_LPRN
 extern const uint16_t PROGMEM rprn_combo[]; // ) KC_RPRN
-extern const uint16_t PROGMEM lbrc_combo[]; // [ KC_LBRC
-extern const uint16_t PROGMEM rbrc_combo[]; // ] KC_RBRC
 extern const uint16_t PROGMEM lcbr_combo[]; // { KC_LCBR
 extern const uint16_t PROGMEM rcbr_combo[]; // } KC_RCBR
 extern const uint16_t PROGMEM labk_combo[]; // < KC_LABK
 extern const uint16_t PROGMEM rabk_combo[]; // > KC_RABK
+extern const uint16_t PROGMEM eql_combo[]; // = KC_EQL
+extern const uint16_t PROGMEM rbrc_combo[]; // _ KC_UNDS
+extern const uint16_t PROGMEM lbrc_combo[]; // [ KC_LBRC
+extern const uint16_t PROGMEM rbrc_combo[]; // ] KC_RBRC
+extern const uint16_t PROGMEM scln_combo[]; // ; KC_SCLN
+extern const uint16_t PROGMEM mins_combo[]; // - KC_MINS 
 extern const uint16_t PROGMEM del_combo[]; // KC_DEL
 extern const uint16_t PROGMEM bspc_combo[]; // KC_BSPC
 extern const uint16_t PROGMEM quot_combo[]; // ' KC_QUOT
 extern const uint16_t PROGMEM dqt_combo[]; // " KC_DQT
-extern const uint16_t PROGMEM mins_combo[]; // - KC_MINS
-extern const uint16_t PROGMEM scln_combo[]; // KC_SCLN
-extern const uint16_t PROGMEM tab_combo[]; // KC_TAB
+extern const uint16_t PROGMEM tab_combo[]; //KC_TAB
 extern const uint16_t PROGMEM ent_combo[]; // KC_ENT
-extern const uint16_t PROGMEM astr_combo[]; // * KC_ASTR
+#endif
+// symbols that may change, generally medium usage symbols.
+#if defined FLEXIBLE_COMBO_DEFS || defined ALL_COMBO_DEFS
 extern const uint16_t PROGMEM slsh_combo[]; // / KC_SLSH
+extern const uint16_t PROGMEM astr_combo[]; // * KC_ASTR
 extern const uint16_t PROGMEM hash_combo[]; // # KC_HASH
-extern const uint16_t PROGMEM dlr_combo[]; // $ KC_DLR
+extern const uint16_t PROGMEM dlr_combo[]; // $ KC_DLR 
+
 extern const uint16_t PROGMEM ampr_combo[]; // & KC_AMPR
-extern const uint16_t PROGMEM bsls_combo[]; // \ KC_BSLS
+extern const uint16_t PROGMEM bsls_combo[];  // \ KC_BSLS
+
 extern const uint16_t PROGMEM exlm_combo[]; // ! KC_EXLM 
 extern const uint16_t PROGMEM at_combo[]; // @ KC_AT
+
 extern const uint16_t PROGMEM perc_combo[]; // % KC_PERC
 extern const uint16_t PROGMEM circ_combo[]; // ^ KC_CIRC
+#endif
+// Symbols that use the pinky for their combos. This should be reserved for least used symbols,
+#if defined PINKY_COMBO_DEFS || defined ALL_COMBO_DEFS
 extern const uint16_t PROGMEM grv_combo[]; // ` KC_GRV
 extern const uint16_t PROGMEM tild_combo[]; // ~ KC_TILD
 extern const uint16_t PROGMEM esc_combo[]; // KC_ESC
 extern const uint16_t PROGMEM caps_combo[]; // KC_CAPS
+#endif
+// combos related to nav
+#if defined NAV_COMBO_DEFS || defined ALL_COMBO_DEFS
 extern const uint16_t PROGMEM pgup_combo[]; // KC_PGUP
 extern const uint16_t PROGMEM pgdn_combo[]; // KC_PGDN
 extern const uint16_t PROGMEM pgup_hjkl_combo[]; // KC_PGUP
 extern const uint16_t PROGMEM pgdn_hjkl_combo[]; // KC_PGDN
+#endif

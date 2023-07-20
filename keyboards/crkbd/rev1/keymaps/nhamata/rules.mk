@@ -1,1 +1,2 @@
 COMBO_ENABLE = yes
+INTROSPECTION_KEYMAP_C = combo.c # This is required in order to make use of the combos defined in userspace. It also allows ifdef blocks to work properly. Note that you can only have one file assigned here. Since combos are the main strategy it is best put here.
