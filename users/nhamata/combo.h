@@ -50,7 +50,7 @@ RM1, This combo occurs when the right hand middle finger is one key above homero
 
 
 //Labels for colemak DHE layout, a layout that is a modification of the popular colemak mod-dh, where the letter 'e' is put on a thumb key. A few keyswaps were required to accomodate this.
-#ifdef DHE_LABELS
+#if defined DHE_LABELS
     #define LI0   KC_T
     #define LM0   KC_S
     #define LR0   KC_R
@@ -60,8 +60,8 @@ RM1, This combo occurs when the right hand middle finger is one key above homero
     #define LR1   KC_W
     #define LI3   KC_G
     #define LM3   KC_T
-    #define LI2   KC_B
-    #define LM2   KC_P
+    // #define LI2   KC_B
+    // #define LM2   KC_P
     #define RI0   KC_N
     #define RM0   KC_L
     #define RR0   KC_I
@@ -71,18 +71,17 @@ RM1, This combo occurs when the right hand middle finger is one key above homero
     #define RR1   KC_Y
     #define RI7   KC_M
     #define RM7   KC_N
-    #define LI8   KC_BSPC
-    #define LM8   KC_J
-    #define LT0    LSFT_T(KC_SPC)
+    // #define LI8   KC_BSPC
+    // #define LM8   KC_J
+    // #define LT0    LSFT_T(KC_SPC)
     #define LI5    LCTL_T(KC_D)
     #define LM5    LGUI_T(KC_C)
     #define LR5    LALT_T(KC_X)
-    #define RT0    RSFT_T(KC_E)
+    // #define RT0    RSFT_T(KC_E)
     #define RI5    RCTL_T(KC_H)
     #define RM5    RGUI_T(KC_COMMA)
     #define RR5    RALT_T(KC_DOT)
-//Labels for basic QWERTY layout. Keycodes choosen based on ease of usage.
-#elif QWERTY_LABELS
+#elif defined QWERTY_LABELS
     #define LI0   KC_F
     #define LM0   KC_D
     #define LR0   KC_S
@@ -92,27 +91,27 @@ RM1, This combo occurs when the right hand middle finger is one key above homero
     #define LR1   KC_W
     #define LI3   KC_G
     #define LM3   KC_F
-    #define LI2   KC_T
-    #define LM2   KC_R
+    // #define LI2   KC_T
+    // #define LM2   KC_R
     #define RI0   KC_J
     #define RM0   KC_K
     #define RR0   KC_L
-    #define RP0   KC_COLON
-    #define RI1   KC_I
-    #define RM1   KC_O
-    #define RR1   KC_P
+    #define RP0   KC_SCLN
+    #define RI1   KC_U
+    #define RM1   KC_I
+    #define RR1   KC_O
     #define RI7   KC_H
     #define RM7   KC_J
-    #define LI8   KC_U
-    #define LM8   KC_I
-    #define LT0   LSFT_T(KC_SPC)
+    // #define LI8   KC_U
+    // #define LM8   KC_I
+    // #define LT0   LSFT_T(KC_SPC)
     #define LI5   LCTL_T(KC_C)
-    #define LR5   LGUI_T(KC_Z)
-    #define LM5   LALT_T(KC_X)    
-    #define RT0   RSFT_T(KC_E)
+    #define LM5   LGUI_T(KC_X)
+    #define LR5   LALT_T(KC_Z)    
+    // #define RT0   RSFT_T(KC_E)
     #define RI5   RCTL_T(KC_M)
-    #define RR5   RGUI_T(KC_COMMA)    
-    #define RM5   RALT_T(KC_DOT)
+    #define RM5   RGUI_T(KC_COMMA)    
+    #define RR5   RALT_T(KC_DOT)
 #endif
 
 enum combos {
@@ -198,7 +197,12 @@ extern const uint16_t PROGMEM esc_combo[]; // KC_ESC
 extern const uint16_t PROGMEM caps_combo[]; // KC_CAPS
 #endif
 // combos related to nav
-#if defined NAV_COMBO_DEFS || defined ALL_COMBO_DEFS
+#if defined NAV_ORTHO_COMBO_DEFS
+extern const uint16_t PROGMEM pgup_combo[]; // KC_PGUP
+extern const uint16_t PROGMEM pgdn_combo[]; // KC_PGDN
+extern const uint16_t PROGMEM pgup_hjkl_combo[]; // KC_PGUP
+extern const uint16_t PROGMEM pgdn_hjkl_combo[]; // KC_PGDN
+#elif defined NAV_STAGGER_COMBO_DEFS
 extern const uint16_t PROGMEM pgup_combo[]; // KC_PGUP
 extern const uint16_t PROGMEM pgdn_combo[]; // KC_PGDN
 extern const uint16_t PROGMEM pgup_hjkl_combo[]; // KC_PGUP

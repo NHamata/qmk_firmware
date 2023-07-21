@@ -45,12 +45,18 @@ const uint16_t PROGMEM esc_combo[] = {LR0, LP0, COMBO_END}; // KC_ESC
 const uint16_t PROGMEM caps_combo[] = {RR0, RP0, COMBO_END}; // KC_CAPS
 #endif
 // combos related to nav
-#if defined NAV_COMBO_DEFS || defined ALL_COMBO_DEFS
+#if defined NAV_ORTHO_COMBO_DEFS
 const uint16_t PROGMEM pgup_combo[] = {KC_HOME, KC_UP, COMBO_END}; // KC_PGUP
 const uint16_t PROGMEM pgdn_combo[] = {KC_UP, KC_END, COMBO_END}; // KC_PGDN
 const uint16_t PROGMEM pgup_hjkl_combo[] = {KC_HOME, KC_K, COMBO_END}; // KC_PGUP
 const uint16_t PROGMEM pgdn_hjkl_combo[] = {KC_K, KC_END, COMBO_END}; // KC_PGDN
+#elif defined NAV_STAGGER_COMBO_DEFS
+const uint16_t PROGMEM pgup_combo[] = {KC_LEFT, KC_UP, COMBO_END}; // KC_PGUP
+const uint16_t PROGMEM pgdn_combo[] = {KC_UP, KC_RIGHT, COMBO_END}; // KC_PGDN
+// const uint16_t PROGMEM pgup_hjkl_combo[] = {KC_H, KC_K, COMBO_END}; // KC_PGUP
+// const uint16_t PROGMEM pgdn_hjkl_combo[] = {KC_K, KC_L, COMBO_END}; // KC_PGDN
 #endif
+
 
 #ifdef ALL_COMBOS
 combo_t key_combos[] = {
@@ -88,8 +94,10 @@ combo_t key_combos[] = {
     [CAPS_COMBO]=COMBO(caps_combo, KC_CAPS),
     [PGUP_COMBO]=COMBO(pgup_combo, KC_PGUP),
     [PGDN_COMBO]=COMBO(pgdn_combo, KC_PGDN),
-    [PGUP_HJKL_COMBO]=COMBO(pgup_hjkl_combo, KC_PGUP),
-    [PGDN_HJKL_COMBO]=COMBO(pgdn_hjkl_combo, KC_PGDN),
+    #if defined NAV_ORTHO_COMBO_DEFS
+        [PGUP_HJKL_COMBO]=COMBO(pgup_hjkl_combo, KC_PGUP),
+        [PGDN_HJKL_COMBO]=COMBO(pgdn_hjkl_combo, KC_PGDN),
+    #endif
 };
 #endif
 

@@ -1,11 +1,17 @@
 // Copyright 2022 Cole Smith <cole@boadsource.xyz>
 // SPDX-License-Identifier: GPL-2.0-or-later
+// qmk compile -kb boardsource/lulu/rp2040 -km nhamata
+// make sure to switch to boot mode
+// then plug in the MASTER SIDE FIRST
+// load the UF2
+// switch to default mode
+// you only need to flash the master ok?
 #define DHE_LABELS
 #define ALL_COMBO_DEFS
+#define NAV_ORTHO_COMBO_DEFS
 #define ALL_COMBOS
 #include QMK_KEYBOARD_H  
 #include "combo.h"
-
 
 enum layers {
     _COLEMAK_DHE,

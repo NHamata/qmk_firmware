@@ -15,8 +15,10 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+// qmk compile -kb crkbd/rev1 -km nhamata
 #define DHE_LABELS
 #define ALL_COMBO_DEFS
+#define NAV_ORTHO_COMBO_DEFS
 #define ALL_COMBOS
 #include QMK_KEYBOARD_H  
 #include "combo.h"
@@ -26,7 +28,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------------------------------------------------.                                  ,-----------------------------------------------------------------------------------------------.
         _______,           KC_Q,            KC_W,           KC_F,           KC_P,           KC_B,                                              KC_Y,           KC_J,           KC_U,           KC_Y,           KC_P,         _______,
   //|---------------+---------------+---------------+---------------+---------------+---------------|                                  |---------------+---------------+---------------+---------------+---------------+---------------|
-        _______,          KC_A,            KC_R,           KC_S,           KC_T,           KC_G,                                              KC_M,           KC_N,           KC_L,           KC_I,           KC_O,         _______,
+        _______,           KC_A,            KC_R,           KC_S,           KC_T,           KC_G,                                              KC_M,           KC_N,           KC_L,           KC_I,           KC_O,         _______,
   //|---------------+---------------+---------------+---------------+---------------+---------------|                                  |---------------+---------------+---------------+---------------+---------------+---------------|
         _______,          KC_Z,       LALT_T(KC_X),   LGUI_T(KC_C),   LCTL_T(KC_D),        KC_V,                                              KC_K,      RCTL_T(KC_H),  RGUI_T(KC_COMMA), RALT_T(KC_DOT),    KC_SLSH,        _______,
   //|---------------+---------------+---------------+---------------+---------------+---------------+---------------|  |---------------+---------------+---------------+---------------+---------------+---------------+---------------|
