@@ -49,6 +49,7 @@ RM1, This combo occurs when the right hand middle finger is one key above homero
 */
 
 
+
 //Labels for colemak DHE layout, a layout that is a modification of the popular colemak mod-dh, where the letter 'e' is put on a thumb key. A few keyswaps were required to accomodate this.
 #if defined DHE_LABELS
     #define LI0   KC_T
