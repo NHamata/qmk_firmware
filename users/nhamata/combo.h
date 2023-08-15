@@ -61,8 +61,6 @@ RM1, This combo occurs when the right hand middle finger is one key above homero
     #define LR1   KC_W
     #define LI3   KC_G
     #define LM3   KC_T
-    // #define LI2   KC_B
-    // #define LM2   KC_P
     #define RI0   KC_N
     #define RM0   KC_L
     #define RR0   KC_I
@@ -72,13 +70,9 @@ RM1, This combo occurs when the right hand middle finger is one key above homero
     #define RR1   KC_Y
     #define RI7   KC_M
     #define RM7   KC_N
-    // #define LI8   KC_BSPC
-    // #define LM8   KC_J
-    // #define LT0    LSFT_T(KC_SPC)
     #define LI5    LCTL_T(KC_D)
     #define LM5    LGUI_T(KC_C)
     #define LR5    LALT_T(KC_X)
-    // #define RT0    RSFT_T(KC_E)
     #define RI5    RCTL_T(KC_H)
     #define RM5    RGUI_T(KC_COMMA)
     #define RR5    RALT_T(KC_DOT)
@@ -92,8 +86,6 @@ RM1, This combo occurs when the right hand middle finger is one key above homero
     #define LR1   KC_W
     #define LI3   KC_G
     #define LM3   KC_F
-    // #define LI2   KC_T
-    // #define LM2   KC_R
     #define RI0   KC_J
     #define RM0   KC_K
     #define RR0   KC_L
@@ -103,109 +95,95 @@ RM1, This combo occurs when the right hand middle finger is one key above homero
     #define RR1   KC_O
     #define RI7   KC_H
     #define RM7   KC_J
-    // #define LI8   KC_U
-    // #define LM8   KC_I
-    // #define LT0   LSFT_T(KC_SPC)
     #define LI5   LCTL_T(KC_C)
     #define LM5   LGUI_T(KC_X)
     #define LR5   LALT_T(KC_Z)    
-    // #define RT0   RSFT_T(KC_E)
     #define RI5   RCTL_T(KC_M)
     #define RM5   RGUI_T(KC_COMMA)    
     #define RR5   RALT_T(KC_DOT)
 #endif
+   // DEL_COMBO,
+   // BSPC_COMBO,
+   // BSLS_COMBO,
+  //  SLSH_COMBO,
+   // HASH_COMBO,
+
+   // PERC_COMBO,
+
 
 enum combos {
+    TAB_COMBO,
+    ENT_COMBO,   
     LPRN_COMBO,
     RPRN_COMBO,
     LCBR_COMBO,
     RCBR_COMBO,
+    QUOT_COMBO,
+    DQT_COMBO,    
+    LBRC_COMBO,
+    RBRC_COMBO, 
+    CIRC_COMBO,
+    DLR_COMBO,      
+    EQL_COMBO,
+    UNDS_COMBO,    
+    SCLN_COMBO,
+    COLN_COMBO,
+    MINS_COMBO,
+    ASTR_COMBO,   
     LABK_COMBO,
     RABK_COMBO,
-    EQL_COMBO,
-    UNDS_COMBO,
-    LBRC_COMBO,
-    RBRC_COMBO,
-    SCLN_COMBO,
-    MINS_COMBO,
-    DEL_COMBO,
-    BSPC_COMBO,
-    QUOT_COMBO,
-    DQT_COMBO,
-    TAB_COMBO,
-    ENT_COMBO,
-    SLSH_COMBO,
-    ASTR_COMBO,
-    HASH_COMBO,
-    DLR_COMBO,   
-    AMPR_COMBO,
-    BSLS_COMBO,
     EXLM_COMBO,
-    AT_COMBO,  
-    PERC_COMBO,
-    CIRC_COMBO,
-    GRV_COMBO,
+    AT_COMBO,
+    QUES_COMBO,  
+    PLUS_COMBO,
+    AMPR_COMBO,
+    PIPE_COMBO, 
     TILD_COMBO,
-    ESC_COMBO,
-    CAPS_COMBO,
-    PGUP_COMBO,
-    PGDN_COMBO,
-    PGUP_HJKL_COMBO,
-    PGDN_HJKL_COMBO,
+    GRV_COMBO,
 };
+// symbols that likely wont change.
 
-#if defined FIRM_COMBO_DEFS || defined ALL_COMBO_DEFS
+//extern const uint16_t PROGMEM del_combo[]; // KC_DEL
+//extern const uint16_t PROGMEM bspc_combo[]; // KC_BSPC
+//extern const uint16_t PROGMEM bsls_combo[]; // \ KC_BSLS
+//extern const uint16_t PROGMEM slsh_combo[]; // / KC_SLSH
+//extern const uint16_t PROGMEM hash_combo[]; // # KC_HASH
+//extern const uint16_t PROGMEM perc_combo[]; // % KC_PERC
+#if defined STABLE_COMBO_DEFS || defined ALL_COMBO_DEFS
+extern const uint16_t PROGMEM tab_combo[]; //KC_TAB
+extern const uint16_t PROGMEM ent_combo[]; // KC_ENT
 extern const uint16_t PROGMEM lprn_combo[]; // ( KC_LPRN
 extern const uint16_t PROGMEM rprn_combo[]; // ) KC_RPRN
 extern const uint16_t PROGMEM lcbr_combo[]; // { KC_LCBR
 extern const uint16_t PROGMEM rcbr_combo[]; // } KC_RCBR
-extern const uint16_t PROGMEM labk_combo[]; // < KC_LABK
-extern const uint16_t PROGMEM rabk_combo[]; // > KC_RABK
-extern const uint16_t PROGMEM eql_combo[]; // = KC_EQL
-extern const uint16_t PROGMEM rbrc_combo[]; // _ KC_UNDS
-extern const uint16_t PROGMEM lbrc_combo[]; // [ KC_LBRC
-extern const uint16_t PROGMEM rbrc_combo[]; // ] KC_RBRC
-extern const uint16_t PROGMEM scln_combo[]; // ; KC_SCLN
-extern const uint16_t PROGMEM mins_combo[]; // - KC_MINS 
-extern const uint16_t PROGMEM del_combo[]; // KC_DEL
-extern const uint16_t PROGMEM bspc_combo[]; // KC_BSPC
+
 extern const uint16_t PROGMEM quot_combo[]; // ' KC_QUOT
 extern const uint16_t PROGMEM dqt_combo[]; // " KC_DQT
-extern const uint16_t PROGMEM tab_combo[]; //KC_TAB
-extern const uint16_t PROGMEM ent_combo[]; // KC_ENT
-#endif
-// symbols that may change, generally medium usage symbols.
-#if defined FLEXIBLE_COMBO_DEFS || defined ALL_COMBO_DEFS
-extern const uint16_t PROGMEM slsh_combo[]; // / KC_SLSH
-extern const uint16_t PROGMEM astr_combo[]; // * KC_ASTR
-extern const uint16_t PROGMEM hash_combo[]; // # KC_HASH
+extern const uint16_t PROGMEM lbrc_combo[]; // [ KC_LBRC
+extern const uint16_t PROGMEM rbrc_combo[]; // ] KC_RBRC
+extern const uint16_t PROGMEM circ_combo[]; // ^ KC_CIRC
 extern const uint16_t PROGMEM dlr_combo[]; // $ KC_DLR 
 
-extern const uint16_t PROGMEM ampr_combo[]; // & KC_AMPR
-extern const uint16_t PROGMEM bsls_combo[];  // \ KC_BSLS
+extern const uint16_t PROGMEM eql_combo[]; //  KC_EQL
+extern const uint16_t PROGMEM unds_combo[]; // _ KC_UNDS
+extern const uint16_t PROGMEM scln_combo[]; // ; KC_SCLN
+extern const uint16_t PROGMEM coln_combo[]; // : KC_COLN
+extern const uint16_t PROGMEM mins_combo[]; // - KC_MINS
+extern const uint16_t PROGMEM astr_combo[]; // * KC_ASTR
+extern const uint16_t PROGMEM labk_combo[]; // < KC_LABK
+extern const uint16_t PROGMEM rabk_combo[]; // > KC_RABK
 
+
+
+#endif
+// symbols that may change, generally medium to low usage symbols.
+#if defined EXP_COMBO_DEFS || defined ALL_COMBO_DEFS
 extern const uint16_t PROGMEM exlm_combo[]; // ! KC_EXLM 
 extern const uint16_t PROGMEM at_combo[]; // @ KC_AT
-
-extern const uint16_t PROGMEM perc_combo[]; // % KC_PERC
-extern const uint16_t PROGMEM circ_combo[]; // ^ KC_CIRC
-#endif
-// Symbols that use the pinky for their combos. This should be reserved for least used symbols,
-#if defined PINKY_COMBO_DEFS || defined ALL_COMBO_DEFS
+extern const uint16_t PROGMEM ques_combo[]; // ? KC_QUES
+extern const uint16_t PROGMEM plus_combo[]; // + KC_PLUS
+extern const uint16_t PROGMEM ampr_combo[]; // & KC_AMPR
+extern const uint16_t PROGMEM pipe_combo[]; // | KC_PIPE
+extern const uint16_t PROGMEM tild_combo[]; //  KC_TILD
 extern const uint16_t PROGMEM grv_combo[]; // ` KC_GRV
-extern const uint16_t PROGMEM tild_combo[]; // ~ KC_TILD
-extern const uint16_t PROGMEM esc_combo[]; // KC_ESC
-extern const uint16_t PROGMEM caps_combo[]; // KC_CAPS
-#endif
-// combos related to nav
-#if defined NAV_ORTHO_COMBO_DEFS
-extern const uint16_t PROGMEM pgup_combo[]; // KC_PGUP
-extern const uint16_t PROGMEM pgdn_combo[]; // KC_PGDN
-extern const uint16_t PROGMEM pgup_hjkl_combo[]; // KC_PGUP
-extern const uint16_t PROGMEM pgdn_hjkl_combo[]; // KC_PGDN
-#elif defined NAV_STAGGER_COMBO_DEFS
-extern const uint16_t PROGMEM pgup_combo[]; // KC_PGUP
-extern const uint16_t PROGMEM pgdn_combo[]; // KC_PGDN
-extern const uint16_t PROGMEM pgup_hjkl_combo[]; // KC_PGUP
-extern const uint16_t PROGMEM pgdn_hjkl_combo[]; // KC_PGDN
 #endif
