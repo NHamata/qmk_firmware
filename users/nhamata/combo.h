@@ -48,8 +48,6 @@ LT7, This combo occurs when the left hand thumb is to the left of the resting po
 RM1, This combo occurs when the right hand middle finger is one key above homerow.
 */
 
-
-
 //Labels for colemak DHE layout, a layout that is a modification of the popular colemak mod-dh, where the letter 'e' is put on a thumb key. A few keyswaps were required to accomodate this.
 #if defined DHE_LABELS
     #define LI0   KC_T
@@ -102,15 +100,6 @@ RM1, This combo occurs when the right hand middle finger is one key above homero
     #define RM5   RGUI_T(KC_COMMA)    
     #define RR5   RALT_T(KC_DOT)
 #endif
-   // DEL_COMBO,
-   // BSPC_COMBO,
-   // BSLS_COMBO,
-  //  SLSH_COMBO,
-   // HASH_COMBO,
-
-   // PERC_COMBO,
-
-
 enum combos {
     TAB_COMBO,
     ENT_COMBO,   
@@ -138,17 +127,11 @@ enum combos {
     PLUS_COMBO,
     AMPR_COMBO,
     PIPE_COMBO, 
+    HASH_COMBO,
+    PERC_COMBO,
     TILD_COMBO,
     GRV_COMBO,
 };
-// symbols that likely wont change.
-
-//extern const uint16_t PROGMEM del_combo[]; // KC_DEL
-//extern const uint16_t PROGMEM bspc_combo[]; // KC_BSPC
-//extern const uint16_t PROGMEM bsls_combo[]; // \ KC_BSLS
-//extern const uint16_t PROGMEM slsh_combo[]; // / KC_SLSH
-//extern const uint16_t PROGMEM hash_combo[]; // # KC_HASH
-//extern const uint16_t PROGMEM perc_combo[]; // % KC_PERC
 #if defined STABLE_COMBO_DEFS || defined ALL_COMBO_DEFS
 extern const uint16_t PROGMEM tab_combo[]; //KC_TAB
 extern const uint16_t PROGMEM ent_combo[]; // KC_ENT
@@ -156,14 +139,12 @@ extern const uint16_t PROGMEM lprn_combo[]; // ( KC_LPRN
 extern const uint16_t PROGMEM rprn_combo[]; // ) KC_RPRN
 extern const uint16_t PROGMEM lcbr_combo[]; // { KC_LCBR
 extern const uint16_t PROGMEM rcbr_combo[]; // } KC_RCBR
-
 extern const uint16_t PROGMEM quot_combo[]; // ' KC_QUOT
 extern const uint16_t PROGMEM dqt_combo[]; // " KC_DQT
 extern const uint16_t PROGMEM lbrc_combo[]; // [ KC_LBRC
 extern const uint16_t PROGMEM rbrc_combo[]; // ] KC_RBRC
 extern const uint16_t PROGMEM circ_combo[]; // ^ KC_CIRC
 extern const uint16_t PROGMEM dlr_combo[]; // $ KC_DLR 
-
 extern const uint16_t PROGMEM eql_combo[]; //  KC_EQL
 extern const uint16_t PROGMEM unds_combo[]; // _ KC_UNDS
 extern const uint16_t PROGMEM scln_combo[]; // ; KC_SCLN
@@ -172,9 +153,6 @@ extern const uint16_t PROGMEM mins_combo[]; // - KC_MINS
 extern const uint16_t PROGMEM astr_combo[]; // * KC_ASTR
 extern const uint16_t PROGMEM labk_combo[]; // < KC_LABK
 extern const uint16_t PROGMEM rabk_combo[]; // > KC_RABK
-
-
-
 #endif
 // symbols that may change, generally medium to low usage symbols.
 #if defined EXP_COMBO_DEFS || defined ALL_COMBO_DEFS
@@ -184,6 +162,8 @@ extern const uint16_t PROGMEM ques_combo[]; // ? KC_QUES
 extern const uint16_t PROGMEM plus_combo[]; // + KC_PLUS
 extern const uint16_t PROGMEM ampr_combo[]; // & KC_AMPR
 extern const uint16_t PROGMEM pipe_combo[]; // | KC_PIPE
-extern const uint16_t PROGMEM tild_combo[]; //  KC_TILD
+extern const uint16_t PROGMEM hash_combo[]; // # KC_HASH
+extern const uint16_t PROGMEM perc_combo[]; // % KC_PERC
+extern const uint16_t PROGMEM tild_combo[]; // ~ KC_TILD
 extern const uint16_t PROGMEM grv_combo[]; // ` KC_GRV
 #endif

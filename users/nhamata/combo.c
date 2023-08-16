@@ -22,10 +22,6 @@ const uint16_t PROGMEM mins_combo[] = {LI5, LM5, COMBO_END}; // - KC_MINS
 const uint16_t PROGMEM astr_combo[] = {RI5, RM5, COMBO_END}; // * KC_ASTR
 const uint16_t PROGMEM labk_combo[] = {LM5, LR5, COMBO_END}; // < KC_LABK
 const uint16_t PROGMEM rabk_combo[] = {RM5, RR5, COMBO_END}; // > KC_RABK
-//const uint16_t PROGMEM del_combo[] = {}; // KC_DEL
-//const uint16_t PROGMEM bspc_combo[] = {}; // KC_BSPC
-//const uint16_t PROGMEM bsls_combo[] = {}; // \ KC_BSLS
-//const uint16_t PROGMEM slsh_combo[] = {}; // / KC_SLSH
 #endif
 // experimental symbols that may change, generally medium to low usage symbols.
 #if defined EXP_COMBO_DEFS || defined ALL_COMBO_DEFS
@@ -33,25 +29,13 @@ const uint16_t PROGMEM exlm_combo[] = {LI5, LR5, COMBO_END}; // ! KC_EXLM
 const uint16_t PROGMEM at_combo[] = {RI5, RR5, COMBO_END}; // @ KC_AT
 const uint16_t PROGMEM ques_combo[] = {LI0, LM1, COMBO_END}; // ? KC_QUES
 const uint16_t PROGMEM plus_combo[] = {RI0, RM1, COMBO_END}; // + KC_PLUS
-const uint16_t PROGMEM ampr_combo[] = {LI0, LM5, COMBO_END}; // & KC_AMPR
-const uint16_t PROGMEM pipe_combo[] = {RI0, RM5, COMBO_END}; // | KC_PIPE
-//LI0, LR1, COMBO_END
-//RI0, RR1, COMBO_END
-//const uint16_t PROGMEM hash_combo[] = {LI1, LR0, COMBO_END}; // # KC_HASH
-//const uint16_t PROGMEM perc_combo[] = {RI1, RR0, COMBO_END}; // % KC_PERC
-//LI0, LR5, COMBO_END
-//RI0, RR5, COMBO_END
-const uint16_t PROGMEM tild_combo[] = {LI1, LM0, COMBO_END}; //  KC_TILD
-const uint16_t PROGMEM grv_combo[] = {RI1, RM0, COMBO_END}; // ` KC_GRV
+const uint16_t PROGMEM ampr_combo[] = {LI0, LR1, COMBO_END}; // & KC_AMPR
+const uint16_t PROGMEM pipe_combo[] = {RI0, RR1, COMBO_END}; // | KC_PIPE
+const uint16_t PROGMEM hash_combo[] = {LI0, LM5, COMBO_END}; // # KC_HASH
+const uint16_t PROGMEM perc_combo[] = {RI0, RM5, COMBO_END}; // % KC_PERC
+const uint16_t PROGMEM tild_combo[] = {LI0, LR5, COMBO_END}; // ~ KC_TILD
+const uint16_t PROGMEM grv_combo[] = {RI0, RR5, COMBO_END}; // ` KC_GRV
 #endif
-//    [DEL_COMBO]=COMBO(del_combo, KC_DEL),
- //   [BSPC_COMBO]=COMBO(bspc_combo, KC_BSPC),
- //    [BSLS_COMBO]=COMBO(bsls_combo, KC_BSLS),
- //   [SLSH_COMBO]=COMBO(slsh_combo, KC_SLSH),
-//    [HASH_COMBO]=COMBO(hash_combo, KC_HASH),
-    
- //   [PERC_COMBO]=COMBO(perc_combo, KC_PERC),
-
 #ifdef ALL_COMBOS
 combo_t key_combos[] = {
     [TAB_COMBO]=COMBO(tab_combo, KC_TAB),
@@ -80,6 +64,8 @@ combo_t key_combos[] = {
     [PLUS_COMBO]=COMBO(plus_combo, KC_PLUS),    
     [AMPR_COMBO]=COMBO(ampr_combo, KC_AMPR),
     [PIPE_COMBO]=COMBO(pipe_combo, KC_PIPE), 
+    [HASH_COMBO]=COMBO(hash_combo, KC_HASH),   
+    [PERC_COMBO]=COMBO(perc_combo, KC_PERC),    
     [TILD_COMBO]=COMBO(tild_combo, KC_TILD),
     [GRV_COMBO]=COMBO(grv_combo, KC_GRV),
 };
