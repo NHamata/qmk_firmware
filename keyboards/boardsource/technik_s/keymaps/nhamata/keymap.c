@@ -32,12 +32,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,             KC_F1,            KC_F2,            KC_F3,            KC_F4,            KC_F6,            KC_F8,            KC_F9,            KC_F10,            KC_F11,          KC_F12,           _______,
     _______,             KC_6,             KC_4,             KC_2,             KC_0,             KC_F5,            KC_F7,            KC_1,             KC_3,              KC_5,            KC_7,
     _______,             KC_8,             KC_LALT,          LGUI_T(KC_ESC),   LCTL_T(KC_BSLS),  KC_CAPS,          _______,          KC_BSPC,          RCTL_T(KC_SLSH),   RGUI_T(KC_BSPC), KC_RALT,          KC_9,          
-    _______,             _______,          _______,                            _______,          MO(1),                              OSM(KC_RSFT),     OSM(KC_RGUI),      _______,         _______,          _______
+    _______,             _______,          _______,                            _______,          MO(1),                              KC_RSFT,          KC_RGUI,           _______,         _______,          _______
   ),
   [2] = LAYOUT(
     _______,             _______,          RGB_HUD,          RGB_VAD,          RGB_TOG,          _______,          _______,          RGB_MOD,          RGB_VAI,           RGB_HUI,         _______,          _______,
     _______,             RGB_SAD,          KC_PGDN,          KC_LEFT,          KC_RIGHT,         _______,          _______,          KC_DOWN,          KC_UP,             KC_PGUP,         RGB_SAI,
     _______,             KC_LALT,          KC_LALT,          KC_LGUI,          LCTL_T(KC_HOME),  _______,          _______,          _______,          RCTL_T(KC_END),    KC_RGUI,         KC_RALT,          KC_RALT,          
-    _______,             _______,          _______,                            OSM(KC_LGUI),     OSM(KC_LSFT),                       _______,          MO(2),             _______,         _______,          _______
+    _______,             _______,          _______,                            KC_LGUI,          KC_LSFT,                            _______,          MO(2),             _______,         _______,          _______
   ),
 };
