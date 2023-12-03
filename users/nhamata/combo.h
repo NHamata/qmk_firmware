@@ -68,10 +68,10 @@ RM1, This combo occurs when the right hand middle finger is one key above homero
     #define RR1   KC_Y
     #define RI7   KC_M
     #define RM7   KC_N
-    #define LI5    LCTL_T(KC_D)
+    #define LI5    KC_D
     #define LM5    LGUI_T(KC_C)
     #define LR5    LALT_T(KC_X)
-    #define RI5    RCTL_T(KC_H)
+    #define RI5    KC_H
     #define RM5    RGUI_T(KC_COMMA)
     #define RR5    RALT_T(KC_DOT)
 #elif defined QWERTY_LABELS
@@ -93,10 +93,10 @@ RM1, This combo occurs when the right hand middle finger is one key above homero
     #define RR1   KC_O
     #define RI7   KC_H
     #define RM7   KC_J
-    #define LI5   LCTL_T(KC_C)
+    #define LI5   KC_C
     #define LM5   LGUI_T(KC_X)
     #define LR5   LALT_T(KC_Z)    
-    #define RI5   RCTL_T(KC_M)
+    #define RI5   KC_M
     #define RM5   RGUI_T(KC_COMMA)    
     #define RR5   RALT_T(KC_DOT)
 #endif
@@ -129,6 +129,8 @@ enum combos {
     PIPE_COMBO, 
     HASH_COMBO,
     PERC_COMBO,
+    SLSH_COMBO,
+    BSLS_COMBO,
     TILD_COMBO,
     GRV_COMBO,
 };
@@ -164,6 +166,8 @@ extern const uint16_t PROGMEM ampr_combo[]; // & KC_AMPR
 extern const uint16_t PROGMEM pipe_combo[]; // | KC_PIPE
 extern const uint16_t PROGMEM hash_combo[]; // # KC_HASH
 extern const uint16_t PROGMEM perc_combo[]; // % KC_PERC
+const uint16_t PROGMEM slsh_combo[]; // / KC_SLSH
+const uint16_t PROGMEM bsls_combo[]; // \ KC_BSLS
 extern const uint16_t PROGMEM tild_combo[]; // ~ KC_TILD
 extern const uint16_t PROGMEM grv_combo[]; // ` KC_GRV
 #endif
