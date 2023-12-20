@@ -27,6 +27,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define MASTER_LEFT
 #define MASTER_RIGHT
 #define COMBO_TERM 22
+#define TAPPING_FORCE_HOLD //this is so that double tap will not trigger a hold of the tap term
+
 // #define EE_HANDS
 //#define QUICK_TAP_TERM 0
 //#define TAPPING_TERM 100
